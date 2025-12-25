@@ -50,7 +50,14 @@ func main() {
 			return
 		}
 
-		log.Printf("Proxying request: %s %s", r.Method, r.URL.String())
+		// Log request (masking API key)
+		logURL := *r.URL
+		if q := logURL.Query(); q.Has("key") {
+			q.Set("key", "***")
+			logURL.RawQuery = q.Encode()
+		}
+		log.Printf("Proxying request: %s %s", r.Method, logURL.String())
+
 		proxy.ServeHTTP(w, r)
 	})
 
