@@ -38,6 +38,18 @@ func main() {
 
 	// Create a handler that uses the proxy
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		// Serve robots.txt
+		if r.URL.Path == "/robots.txt" && r.Method == http.MethodGet {
+			http.ServeFile(w, r, "robots.txt")
+			return
+		}
+
+		// Serve the index page for the root path
+		if r.URL.Path == "/" && r.Method == http.MethodGet {
+			http.ServeFile(w, r, "index.html")
+			return
+		}
+
 		log.Printf("Proxying request: %s %s", r.Method, r.URL.String())
 		proxy.ServeHTTP(w, r)
 	})

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini API Proxy</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ffffff, #888888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #aaaaaa;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #00ff00;
+            border-radius: 50%;
+            margin-right: 10px;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        .status-text {
+            font-size: 0.9rem;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 4rem;
+        }
+
+        .github-link {
+            text-decoration: none;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+        }
+
+        .github-link:hover {
+            background-color: #ffffff;
+            color: #000000;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Subtle background effect */
+        .bg-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-effect"></div>
+    <div class="container">
+        <h1>Gemini API Proxy</h1>
+        <p>High-Performance Gateway for Generative AI</p>
+        
+        <div class="status-text">
+            <span class="status-indicator"></span>System Operational
+        </div>
+
+        <a href="https://github.com/YusongXiao/aiproxy" class="github-link" target="_blank">
+            VIEW ON GITHUB
+        </a>
+    </div>
+</body>
+</html>
